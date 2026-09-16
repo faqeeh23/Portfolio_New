@@ -1,3 +1,5 @@
+
+// header border-bottom
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 20) {
@@ -8,7 +10,7 @@ window.addEventListener('scroll', function() {
 });
 
 
-
+// smoth loading
 document.addEventListener("DOMContentLoaded", function(){
     const revealElements = document.querySelectorAll(".reveal");
     const revealOptions = {
