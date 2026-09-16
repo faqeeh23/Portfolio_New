@@ -7,30 +7,32 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-bg);
     font-family: var(--font-body);
+    
 }
 :root {
     --color-bg: #141416;
-        
+    --color-bg-raised: #1a1a1d;
+    --color-bg-card: #1f1f22;
+    --color-bg-hover: #252528;
 
-    --color-border: rgba(143, 163, 151, 0.12);
-    --color-border-strong: rgba(143, 163, 151, 0.28);
-    --color-border:rgba(170, 188, 178, 0.5);
-    --color-bg-raised-glass: rgba(26, 26, 29, 0.6);
+    --color-border: rgba(201, 169, 98, 0.1);
+    --color-border-strong: rgba(201, 169, 98, 0.22);
 
-    --color-accent: #a8bbb5;        
-    --color-accent-light: #aabcb2;  
-    --color-accent-dim: rgba(143, 163, 151, 0.12);
-    
-    --backg-color-card:#1f1f22;
+    --color-accent: #c9a962;
+    --color-accent-light: #ddc18a;
+    --color-accent-dim: rgba(201, 169, 98, 0.1);
+    --color-bronze: #a67c52;
 
-    --color-bronze: #cc8b65;        
-
-    --color-text: #f4f6f5;        
-    --color-text-secondary: #b5bcba;
-    --color-text-muted: #78827e;   
+    --color-text: #eceae6;
+    --color-text-secondary: #a8a4a0;
+    --color-text-muted: #6b6864; 
     
     --space-1: 4px;
     --space-2: 16px;
@@ -64,16 +66,42 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     top: 0;
     left: 0;
     z-index: 5;
+    border-bottom: 1px solid transparent ;
+    transition: border-bottom 0.3s ease, background-color 0.3s ease;
+
 }
 
+.header.scrolled {
+    border-bottom: 1px solid var(--color-border); 
+}
 
 .logo {
     width: 50px;
 }
 
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(90deg);
+   }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .logo img {
     width: 100%;
+    animation : rotate 3s linear infinite;
 }
+
 /* ================ Nav ================ */
 
 .nav ul {
@@ -120,9 +148,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     position: relative; 
     cursor: pointer;
     color: var(--color-bg);
-
-
 }
+
 .contact-btn a {
     text-decoration: none;
     color: var(--color-bg);
@@ -148,7 +175,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 .main{
     display: flex;
     flex-direction: column;
-    gap: 200px;
+    gap: 150px;
 }
 
 .hero {
@@ -163,9 +190,29 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     width: 400px;
     height: 600px;
     border-radius: var(--space-2);
-    box-shadow: 1px 12px 15px -3px var(--color-accent);
+    box-shadow: 0 0 15px -3px var(--color-accent);
+    animation: rotateShadow 4s linear infinite;
+    z-index: 1;
 }
 
+
+@keyframes rotateShadow {
+    0% {
+        box-shadow: 15px 0px 25px -5px var(--color-accent);
+    }
+    25% {
+        box-shadow: 0px 15px 25px -5px var(--color-accent);
+    }
+    50% {
+        box-shadow: -15px 0px 25px -5px var(--color-accent);
+    }
+    75% {
+        box-shadow: 0px -15px 25px -5px var(--color-accent);
+    }
+    100% {
+        box-shadow: 15px 0px 25px -5px var(--color-accent);
+    }
+}
 .image img {
     width: 100%;
     height: 100%;
@@ -639,7 +686,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .soft-skills li {
     list-style: none;
-    color: #784628;
+    color: var(--color-accent-light);
     background-color: var(--backg-color-card);
     padding: var(--space-2);
     border: 1px solid var(--color-bronze);
@@ -1018,3 +1065,158 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 
+/*  leazy load  */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ======================
+    Responsive quereis
+=========================*/
+
+@media (max-width: 1024px) {
+    .main {
+        padding: 40px;
+    }
+    
+    .projects-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skills-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 20px 16px;
+        gap: 80px; 
+    }
+
+    
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-4);
+    }
+
+    .hero-info h3::before {
+        display: none;
+    }
+
+    .hero-info h3 {
+        justify-content: center;
+    }
+
+    .location {
+        justify-content: center;
+    }
+
+    .btn-row {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .links {
+        justify-content: center;
+    }
+
+    .image {
+        width: 100%;
+        max-width: 280px;
+        height: 380px; 
+        margin: 0 auto; 
+    }
+
+    .about-p {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .resulte-box {
+        flex-direction: column;
+    }
+
+    .experience {
+        grid-template-columns: 1fr; 
+        gap: var(--space-3);
+        max-width: 100%; 
+    }
+
+    .experience-contener {
+        width: 100%;
+    }
+
+    .ex p, .ul-f-p li, .about-p p, .hero-info p, .box-text {
+        font-size: 14px;
+        line-height: 1.6;
+        word-break: break-word; 
+    }
+
+    .ul-f-p {
+        padding-left: 15px;
+    }
+
+    .projects-cards,
+    .skills-cards,
+    .achievements-grid,
+    .connect-container,
+    .inputs-row,
+    .languages-box {
+        grid-template-columns: 1fr; 
+    }
+    .experience,
+    .experience-one-exp,
+    .experience-tow-exp,
+    .experience .experience-one-exp,
+    .experience .experience-tow-exp {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .experience {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-3);
+    }
+
+    .technology {
+        display: none;
+    }
+    .ex-name {
+        margin-bottom: 5px;
+    }
+    .header {
+        padding: var(--space-2);
+    }
+    
+    .nav {
+        display: none; 
+    }
+    .left-box {
+        padding: var(--space-3);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-info h1 {
+        font-size: 32px;
+    }
+    
+    .view-proj, .get-touch {
+        padding: var(--space-2) var(--space-3);
+        font-size: 13px;
+    }
+}
