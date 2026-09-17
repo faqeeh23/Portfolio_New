@@ -1,5 +1,5 @@
 
-// header border-bottom
+// header border-bottom on scroll 
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.header');
     if (window.scrollY > 20) {
