@@ -4,7 +4,7 @@ A modern, responsive, and production-ready personal portfolio website showcasing
 
 ## 🚀 Live Demo
 
-Check out the live website: [mohemmed-alfqeeh-portfolio.vercel.app](https://mohemmed-alfqeeh-portfolio.vercel.app)
+Check out the live website: [mohemmed-alfqeeh-portfolio.vercel.app](https://mohemmed-alfqeeh-portfolio.vercel.app) || https://faqeeh23.github.io/Portfolio_New/
 
 ---
 
