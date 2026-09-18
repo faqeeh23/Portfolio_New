@@ -9,12 +9,13 @@
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 body {
     background-color: var(--color-bg);
     font-family: var(--font-body);
-    
+    font-size: var(--text-base);
 }
 :root {
     --color-bg: #141416;
@@ -41,8 +42,14 @@ body {
     --space-5: 40px;
     --space-6: 48px;
 
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-base: 16px;
+    --text-lg: 18px;
+    --text-xl: 20px;
+    --text-2xl: 24px;
 
-    --p-b: 80px
+    --p-b: 80px;
 }
 
 h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
@@ -72,12 +79,13 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .header.scrolled {
-    border-bottom: 1px solid var(--color-border); 
+    border-bottom: 2px solid var(--color-bronze); 
 }
 
 .logo {
     width: 50px;
 }
+
 
 
 @keyframes rotate {
@@ -172,10 +180,11 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 
 /* =========== main ========================= */
+
 .main{
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: clamp(60px, 10vw, 150px);
 }
 
 .hero {
@@ -183,12 +192,14 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     flex-direction: row;
     color: var(--color-text);
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    gap: clamp(40px , 8vw, 160px);
+    padding: 0;
 }
 
 .image {
-    width: 400px;
-    height: 600px;
+    width: min(400px, 40vw);
+    height: auto;
     border-radius: var(--space-2);
     box-shadow: 0 0 15px -3px var(--color-accent);
     animation: rotateShadow 4s linear infinite;
@@ -223,7 +234,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     display: inline-flex;       
     align-items: center;        
     gap: 12px;   
-    font-size: 10px;
+    font-size: var(--text-sm);
     letter-spacing: 4px; 
     color: var(--color-accent-light);              
 }
@@ -256,6 +267,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .hero-info p {
     color: var(--color-text);
+    font-size: var(--text-lg);
+    line-height: 1.7;
 }
 
 .location {
@@ -327,9 +340,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 
 
-.main {
-        padding:80px 200px;;
-
+.main { 
+    padding: 80px clamp(24px, 8vw, 200px);
 }
 /* ============ About ========================= */
 
@@ -368,15 +380,17 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     color: var(--color-text);
 }
 .about-header p {
+    font-size: var(--text-2xl);
     color: var(--color-accent-light);
 }
 .about p {
     color: #aabcb2;
+    font-size: var(--text-xl);
 }
 .about-p {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: clamp(30px, 6vw, 100px);
 }
 
 .about-p p {
@@ -388,7 +402,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     flex-direction: column;
     gap: var(--space-3);
     padding: var(--space-5);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border-radius: var(--space-1);
     border: 1px solid var(--color-border);
     color: var(--color-accent-light);
@@ -402,33 +416,31 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .currently h3 {
-    font-size: var(--space-1);
+    font-size: var(--space-2);
+    color: var(--color-text);
 }
 
 
-.pargraph p {
-    font-size: var(--space-3);
+.pargraph {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
 }
-
 
 /* resulte box */
 
 
-.resulte-box {
-    display: flex;
-    flex-direction: row;
 
-}
 
 .resulte {
     padding: var(--space-3);
-    background-color: var(--backg-color-card);
-    width: 100%;
+    background-color: var(--color-bg-card);
     color: var(--color-accent);
     border: 0.5px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    width: min(270px, 100%);
 }
 
 .resulte span {
@@ -482,7 +494,9 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     text-decoration: none;
     transition: 0.7s ease;
 }
-
+.ex i {
+    font-size: var(--space-3);
+}
 
 .ex a:hover {
     transform: translateY(-5px);
@@ -494,16 +508,22 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     padding-left: 12px;
 }
 
+.ul-f-p li {
+    font-size: var(--text-base);
+    line-height: 1.7;
+}
 .ul-f-p li::marker {
     color: var(--color-bronze);
 }
 
 .ex p {
     color: var(--color-accent-light);
+    font-size: var(--text-base);
+    line-height: 1.7;
 }
 .ex span {
     color: var(--color-text-muted);
-    font-size: 10px;
+    font-size: 17px;
 }
 
 
@@ -516,7 +536,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .technology li {
     padding: var(--space-2);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     color: var(--color-bronze);
     border: 1px solid var(--color-border);
     list-style: none;
@@ -560,7 +580,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     justify-content: space-around;
     padding: var(--space-5);
     gap: var(--space-3);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     transition: 0.7s ease;
     border-radius: 10px;
@@ -590,7 +610,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .in-progress h4 {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     color: var(--color-bronze);
     border: 1px solid var(--color-bronze);
     padding: var(--space-1);
@@ -606,9 +626,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     list-style: none;
     border: 1px solid var(--color-border);
     color: var(--color-bronze);
-    font-size: 10px;
     padding: var(--space-1) var(--space-2);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
 }
 
 .card a {
@@ -641,7 +660,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     padding: var(--space-6);
     border: 1px solid var(--color-border);
     border-radius: 10px;
@@ -649,6 +668,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .skill-card h3 {
     color: var(--color-text);
+    font-size: var(--text-lg);
+
 }
 
 .skill-card ul {
@@ -660,7 +681,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     margin: 0;
 }
 .skill-card li {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border); 
     padding: 6px 12px;
     border-radius: 6px;
@@ -687,7 +708,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 .soft-skills li {
     list-style: none;
     color: var(--color-accent-light);
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     padding: var(--space-2);
     border: 1px solid var(--color-bronze);
 }
@@ -710,7 +731,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .achievement-card {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
     padding: var(--space-4);
@@ -727,7 +748,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     align-items: center;
     gap: var(--space-2);
     color: var(--color-bronze);
-    font-size: 12px;
+    font-size: var(--text-xs);
     letter-spacing: 2px;
 }
 
@@ -749,7 +770,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .institution, .desc {
     color: var(--color-accent-light);
-    font-size: 14px;
+    font-size: var(--text-base);
+    line-height: 1.6;
 }
 
 .card-badge {
@@ -781,7 +803,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .cert-info {
     color: var(--color-text-secondary);
-    font-size: 12px;
+    font-size: 13px;
 }
 
 .cert-link {
@@ -804,7 +826,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .languages-box {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
     padding: var(--space-4);
@@ -816,7 +838,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .lang-title {
     color: var(--color-text-muted);
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 2px;
 }
 
@@ -864,7 +886,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .left-box {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
     padding: var(--space-5);
@@ -875,8 +897,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .box-text {
     color: var(--color-text-secondary);
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: var(--text-base);
+    line-height: 1.7;
 }
 
 .info-list {
@@ -912,14 +934,14 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .info-details span {
-    font-size: 10px;
+    font-size:var(--text-sm);
     letter-spacing: 1.5px;
     color: var(--color-text-muted);
 }
 
 .info-details a, .info-details p {
     color: var(--color-text);
-    font-size: 14px;
+    font-size: var(--text-base);
     text-decoration: none;
     transition: 0.3s ease;
 }
@@ -935,7 +957,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .small-title {
-    font-size: 10px;
+    font-size: var(--text-xs);
     letter-spacing: 1.5px;
     color: var(--color-text-muted);
     margin-bottom: 4px;
@@ -962,7 +984,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .right-box {
-    background-color: var(--backg-color-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
     padding: var(--space-5);
@@ -1002,7 +1024,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .input-box label {
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1.5px;
     color: var(--color-text-muted);
 }
@@ -1049,7 +1071,16 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     transform: translateY(-2px);
 }
 
+h5 a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: 0.3s ease
+}
 
+h5 a:hover {
+    color: var(--color-accent-light);
+    transform: translateY(-30px);
+}
 
 /* ========= footer ============== */
 
@@ -1079,6 +1110,76 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 
+
+/* ===================== icons style =============== */
+
+.technology,
+.techno-section ul {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.technology li,
+.techno-section li {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    font-size: 20px;
+
+    transition: 0.2s ease;
+}
+
+.technology li:hover,
+.techno-section li:hover {
+    transform: translateY(-3px);
+}
+
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.skill-icons li {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+
+    font-size: 27px;
+
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.skill-icons li:hover {
+    transform: translateY(-4px);
+}
+
+.skill-icons li i {
+    font-size: 27px;
+}
+
 /* ======================
     Responsive quereis
 =========================*/
@@ -1087,7 +1188,9 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     .main {
         padding: 40px;
     }
-    
+    .hero {
+        padding: 0;
+    }
     .projects-cards {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1102,13 +1205,16 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
         padding: 20px 16px;
         gap: 80px; 
     }
-
+    body {
+        font-size: 15px;
+    }
     
     .hero {
         flex-direction: column-reverse;
         align-items: center;
         text-align: center;
         gap: var(--space-4);
+        padding: 0;
     }
 
     .hero-info h3::before {
@@ -1135,8 +1241,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     .image {
         width: 100%;
         max-width: 280px;
-        height: 380px; 
-        margin: 0 auto; 
+        height: 380px;
+        margin: 0 auto;
     }
 
     .about-p {
@@ -1149,9 +1255,10 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     }
 
     .experience {
-        grid-template-columns: 1fr; 
+        display: flex;
+        flex-direction: column;
         gap: var(--space-3);
-        max-width: 100%; 
+        width: 100%;
     }
 
     .experience-contener {
@@ -1159,8 +1266,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     }
 
     .ex p, .ul-f-p li, .about-p p, .hero-info p, .box-text {
-        font-size: 14px;
-        line-height: 1.6;
+        font-size: 15px;
+        line-height: 1.7;
         word-break: break-word; 
     }
 
@@ -1176,7 +1283,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     .languages-box {
         grid-template-columns: 1fr; 
     }
-    .experience,
+    
     .experience-one-exp,
     .experience-tow-exp,
     .experience .experience-one-exp,
@@ -1187,13 +1294,14 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
         max-width: 100%;
     }
 
-    .experience {
-        grid-template-columns: 1fr !important;
-        gap: var(--space-3);
-    }
+    
 
     .technology {
-        display: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-2);
+        flex-wrap: wrap;
     }
     .ex-name {
         margin-bottom: 5px;
@@ -1208,13 +1316,55 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     .left-box {
         padding: var(--space-3);
     }
+
+    .technology,
+    .techno-section ul {
+        gap: 10px;
+    }
+
+    .technology li,
+    .techno-section li {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .skill-icons {
+        gap: 12px;
+    }
+
+    .skill-icons li {
+        width: 42px;
+        height: 42px;
+    }
+
+    .skill-icons li i {
+        font-size: 23px;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 0;
+    }
     .hero-info h1 {
         font-size: 32px;
     }
-    
+
+    .hero-info p {
+        font-size: 15px;
+    }
+
+    .pargraph p,
+    .ex p,
+    .ul-f-p li,
+    .card-header p,
+    .box-text,
+    .institution,
+    .desc {
+        font-size: 15px;
+        line-height: 1.7;
+    }
     .view-proj, .get-touch {
         padding: var(--space-2) var(--space-3);
         font-size: 13px;
