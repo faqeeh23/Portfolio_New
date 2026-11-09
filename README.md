@@ -23,7 +23,7 @@ Check out the live website: [mohemmed-alfqeeh-portfolio.vercel.app](https://mohe
 **Current training:** Coding Trainee at Orange Coding Academy, September 1, 2026 – Present.
 
 1. **Lynk Jo Platform:** An e-commerce marketplace connecting local Jordanian fashion merchants with customers through web and mobile apps *(React, FastAPI, Firebase, Redis, Cloudinary, AI/ML)*.
-2. **Face Verified Exam Attendance System:** A smart platform automating student check-in and verification using facial recognition.
+2. **Face Verified Exam Attendance System:** My graduation project at Yarmouk University, automating student check-in and verification using facial recognition.
 3. **Karak Chamber of Commerce System:** Full-stack website and management system built with React, Next.js, Node.js, and PostgreSQL.
 
 4. **SkillPath AI (in progress):** An adaptive learning platform being developed with React, Laravel, and MySQL.
@@ -51,3 +51,5 @@ Serve this folder with any static HTTP server. This plain HTML/CSS/JavaScript si
 New project details use the supplied descriptions and URL. SkillPath AI is in progress. No completion status is asserted for the other additions, and projects without supplied URLs have no demo links.
 
 The SkillPath AI, ecommerce project, Dental Appointment System, and EDU-TRACK cards identify projects developed during Orange Coding Academy training. Orange logo source: [official Boosted brand assets](https://boosted.orange.com/docs/5.3/about/brand/).
+
+Yarmouk University logo source: https://www.yu.edu.jo/images/yu-text1ORG.png (official university website).

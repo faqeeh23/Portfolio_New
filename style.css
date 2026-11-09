@@ -629,6 +629,18 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     overflow-wrap: anywhere;
 }
 
+.university-badge {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.university-badge img {
+    flex: none;
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+}
+
 .in-progress {
     display: flex;
     flex-direction: row;
