@@ -669,6 +669,15 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     background-color: var(--color-bg-card);
 }
 
+/* Monochrome Express logo stays legible on the dark project cards. */
+.projects .techno-section li[title="Express.js"] {
+    color: var(--color-text);
+}
+
+.projects .techno-section li[title="Cloudinary"] {
+    color: #3448c5;
+}
+
 .card a {
     color: var(--color-bronze);
     text-decoration: none;
