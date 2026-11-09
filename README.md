@@ -49,3 +49,5 @@ portfolio-new/
 Serve this folder with any static HTTP server. This plain HTML/CSS/JavaScript site has no package installation or build step.
 
 New project details use the supplied descriptions and URL. SkillPath AI is in progress. No completion status is asserted for the other additions, and projects without supplied URLs have no demo links.
+
+The SkillPath AI, ecommerce project, Dental Appointment System, and EDU-TRACK cards identify projects developed during Orange Coding Academy training. Orange logo source: [official Boosted brand assets](https://boosted.orange.com/docs/5.3/about/brand/).
