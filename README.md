@@ -59,3 +59,13 @@ Yarmouk University logo source: https://www.yu.edu.jo/images/yu-text1ORG.png (of
 Click a project card or its View project details button to open its details. Website links keep their direct navigation. The dialog supports keyboard access, Escape, a close button, and backdrop dismissal.
 
 Project feature descriptions and optional screenshots are configured in `projectDetails` in `script.js`, in the same order as the cards (matched by `data-project`). To add real screenshots, place them under `images/` and add objects such as `{ src: "images/project-screen.png", alt: "Description of the project screen" }` to that project's `images` array. Empty galleries stay hidden. Real project screenshots are included under `images/projects/`; provenance is recorded in `images/projects/SOURCES.md`.
+
+## Interface and interaction
+
+The dark-and-gold layout uses the loaded Instrument Serif display face and Plus Jakarta Sans body face. Real screenshot previews lead each project card. Project filters separate Orange Academy, graduation, and in-progress work. A mobile menu supports Escape and keyboard focus. Content stays visible without scroll animations and respects reduced-motion preferences.
+
+Project dialogs show one screenshot at a time, with previous/next buttons, left/right arrow keys, an image counter, and a full-size image link. The close control stays outside the scrolling content. All original project descriptions, supplied demo URLs, academy attribution, and in-progress statuses are preserved.
+
+Contact fields have connected labels, required validation, and named values (including the message). The phone link now matches the displayed number. The existing Formspree destination remains unchanged.
+
+Validation: reviewed at 320, 390, 768, 1024, and 1440 pixel widths; no horizontal overflow; all seven dialogs, all four filters, gallery switching, Escape/focus restoration, and mobile navigation checked in-browser. JavaScript syntax, HTML nesting, unique IDs, local assets, and Git whitespace checks pass. No contact messages were submitted during verification.
