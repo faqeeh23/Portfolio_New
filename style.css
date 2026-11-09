@@ -12,6 +12,10 @@ html {
     
 }
 
+section[id] {
+    scroll-margin-top: 110px;
+}
+
 body {
     background-color: var(--color-bg);
     font-family: var(--font-body);
@@ -568,13 +572,14 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .projects-cards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: auto;
     flex-wrap: wrap;
     gap: var(--space-5);
 }
 
 .card {
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -634,6 +639,11 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
     color: var(--color-bronze);
     text-decoration: none;
     transition: 0.7s ease;
+}
+
+.project-note {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
 }
 
 .card a:hover {
@@ -881,11 +891,12 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 
 .connect-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
 }
 
 .left-box {
+    min-width: 0;
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
@@ -928,6 +939,8 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .info-details {
+    min-width: 0;
+    overflow-wrap: anywhere;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -984,6 +997,7 @@ h1, h2, .hero-info h1, .about-header h1, .experience-header h1 {
 }
 
 .right-box {
+    min-width: 0;
     background-color: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--space-1);
@@ -1192,7 +1206,7 @@ h5 a:hover {
         padding: 0;
     }
     .projects-cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     
     .skills-cards {
