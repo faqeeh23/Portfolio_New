@@ -53,3 +53,9 @@ New project details use the supplied descriptions and URL. SkillPath AI is in pr
 The SkillPath AI, ecommerce project, Dental Appointment System, and EDU-TRACK cards identify projects developed during Orange Coding Academy training. Orange logo source: [official Boosted brand assets](https://boosted.orange.com/docs/5.3/about/brand/).
 
 Yarmouk University logo source: https://www.yu.edu.jo/images/yu-text1ORG.png (official university website).
+
+## Project detail popups
+
+Click a project card or its View project details button to open its details. Website links keep their direct navigation. The dialog supports keyboard access, Escape, a close button, and backdrop dismissal.
+
+Project feature descriptions and optional screenshots are configured in `projectDetails` in `script.js`, in the same order as the cards (matched by `data-project`). To add real screenshots, place them under `images/` and add objects such as `{ src: "images/project-screen.png", alt: "Description of the project screen" }` to that project's `images` array. Empty galleries stay hidden. No project screenshots were available in the repository when this feature was added.
