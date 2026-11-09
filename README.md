@@ -20,6 +20,8 @@ Check out the live website: [mohemmed-alfqeeh-portfolio.vercel.app](https://mohe
 
 ## 💼 Featured Experience & Projects
 
+**Current training:** Coding Trainee at Orange Coding Academy, September 1, 2026 – Present.
+
 1. **Lynk Jo Platform:** An e-commerce marketplace connecting local Jordanian fashion merchants with customers through web and mobile apps *(React, FastAPI, Firebase, Redis, Cloudinary, AI/ML)*.
 2. **Face Verified Exam Attendance System:** A smart platform automating student check-in and verification using facial recognition.
 3. **Karak Chamber of Commerce System:** Full-stack website and management system built with React, Next.js, Node.js, and PostgreSQL.
